@@ -1,0 +1,497 @@
+@import "../../../scss//variables.scss";
+$header-hight: 5rem;
+.channelWrap {
+  background-color: $background-dark;
+  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem 0;
+  overflow: hidden;
+  height: 100vh;
+  padding-right: 0.5rem;
+  border-right: 1px solid $border-dark;
+  .myAccount {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    min-height: $header-hight;
+    border-bottom: 1px solid $border-dark;
+    gap: 0 1rem;
+    .accountInfo {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem 0;
+      width: 90%;
+      .name {
+        font-weight: 600;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 80%;
+        overflow: hidden;
+      }
+      .status {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 80%;
+        overflow: hidden;
+      }
+    }
+  }
+  .searchWrap {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    border: 1px solid $border-dark;
+    border-radius: 15px;
+    padding: 0 1rem;
+    width: 90%;
+    background: $background-dark-light-1;
+    .searchIcon {
+      color: white;
+    }
+    .searchInput {
+      background-color: inherit;
+      height: 3rem;
+      border-radius: 15px;
+      color: white;
+      padding: 0 0 0 0.5rem;
+      outline: none;
+      width: 100%;
+      font-size: 0.9rem;
+    }
+  }
+  .header {
+    display: flex;
+    width: 90%;
+    align-items: flex-end;
+    align-self: center;
+    .status {
+      color: white;
+      font-size: 0.9rem;
+    }
+    .more {
+      color: $text-color-dark;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      span {
+        margin-right: 0.25rem;
+      }
+      &.icon {
+        font-size: 1.2rem;
+        &:hover {
+          transform: scale(1.3);
+          color: $white;
+          cursor: pointer;
+          transition: all 0.2s linear;
+        }
+      }
+    }
+    .msgCount {
+      background-color: $primary-color;
+      padding: 0.2rem 0.5rem;
+      font-size: 0.8rem;
+      border-radius: 20px;
+      color: white;
+      line-height: 0.8rem;
+      margin: 0 0 0.1rem 0.5rem;
+    }
+  }
+}
+// OnlineList
+.onlineListWrap {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  gap: 1rem 0;
+
+  .list {
+    display: flex;
+    width: 100%;
+    gap: 0 0.5rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    padding: 0 0 0.75rem 0;
+    backdrop-filter: blur(5px);
+    .itemUser {
+      display: flex;
+      gap: 0.5rem 0;
+      flex-direction: column;
+      align-items: center;
+      color: $text-color-dark;
+      .userName {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 4rem;
+        font-size: 0.9rem;
+        text-align: center;
+      }
+    }
+  }
+}
+// MessageChatList
+.msgList {
+  width: 100%;
+  background-color: $background-dark;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  .msgItem {
+    cursor: pointer;
+    padding: 0 8% 0 5%;
+    min-height: 5rem;
+    display: flex;
+    align-items: center;
+    gap: 0 1rem;
+    transition: all 0.2s linear;
+    &:hover {
+      background-color: $background-dark-light-1;
+    }
+    .msgInfo {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 0.5rem 0;
+      max-width: 75%;
+      .firstLine {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        .name {
+          font-size: 0.9rem;
+        }
+        .time {
+          font-size: 0.8rem;
+        }
+      }
+      .secondLine {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        .lastMsg {
+          font-size: 0.85rem;
+          color: $text-color-dark;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          max-width: 90%;
+          &.unread {
+            font-weight: 600;
+            color: white;
+          }
+        }
+        .msgUnread {
+          background-color: $primary-color;
+          border-radius: 50%;
+          width: 1.1rem;
+          height: 1.1rem;
+          font-size: 0.8rem;
+          text-align: center;
+          line-height: 1.1rem;
+        }
+      }
+    }
+    &.grActive {
+      background-color: #80808054;
+    }
+  }
+}
+
+// BoxChat
+.boxChatWrap {
+  background-color: $background-dark;
+  flex: 1;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .headerBox {
+    min-height: $header-hight;
+    border-bottom: 1px solid $border-dark;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+    .infoGroup {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      .title {
+        color: $white;
+        margin-left: 1rem;
+        font-size: 0.9rem;
+      }
+    }
+    .iconOpennav {
+      color: $white;
+      font-size: 1.3rem;
+      padding: 0.5rem;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+        transition: all 0.3s linear;
+      }
+    }
+  }
+  .content {
+    position: relative;
+    padding: 0.5rem 1rem;
+    background-color: $black;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.25rem 0;
+    overflow-y: scroll;
+    height: 100%;
+    .messageWrap {
+      width: 100%;
+      position: relative;
+      &:last-child {
+        margin-top: 1.75rem;
+      }
+      &.mgBot {
+        margin-bottom: 1.75rem;
+      }
+      &:hover {
+        .options {
+          display: flex;
+        }
+      }
+      .nickname {
+        color: $text-color-dark;
+        font-size: 0.7rem;
+        position: absolute;
+        left: 2rem;
+        top: -1.25rem;
+      }
+      &.left {
+        text-align: left;
+        .contentWrap {
+          margin-left: 0.35rem;
+          background-color: $background-dark-light-1;
+          &.messageDeleted {
+            background-color: transparent;
+            border: 1px solid $text-color-dark;
+            color: $white;
+            .contentMsg {
+              color: $white;
+            }
+          }
+        }
+        .contentMsg {
+          color: $text-color-dark;
+          overflow-wrap: break-word;
+          display: block;
+          width: 100%;
+          padding: 0.5rem 1rem;
+        }
+      }
+      &.right {
+        .nickname {
+          display: none;
+        }
+        text-align: right;
+        .contentWrap {
+          background-color: $primary-color;
+          &.messageDeleted {
+            background-color: transparent;
+            border: 1px solid $text-color-dark;
+            color: $white;
+            .contentMsg {
+              color: $white;
+            }
+          }
+        }
+        .contentMsg {
+          color: $black;
+          overflow-wrap: break-word;
+          display: block;
+          width: 100%;
+          padding: 0.5rem 1rem;
+        }
+        .timeSend {
+          margin-top: 0.5rem;
+          color: white;
+          font-size: 0.8rem;
+          color: $text-color-dark;
+        }
+        .options {
+          left: -3rem;
+        }
+      }
+    }
+    .message {
+      display: inline-flex;
+      width: fit-content;
+      max-width: 50%;
+      position: relative;
+      .contentWrap {
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        &.hideAvt {
+          margin-left: 2rem;
+        }
+        .replyMess {
+          color: rgb(0, 0, 0);
+          background-color: rgba(240, 248, 255, 0.6);
+          padding: 1.25rem 1rem 0.5rem;
+          font-style: italic;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          white-space: nowrap;
+          overflow: hidden;
+          -webkit-line-clamp: 1;
+          text-overflow: ellipsis;
+          border-bottom: 1px solid gray;
+          cursor: pointer;
+          .enterIcon {
+            transform: scaleX(-1) translateY(-0.5rem);
+            font-size: 1.3rem;
+          }
+          .replyContent {
+            text-overflow: ellipsis;
+            overflow: hidden;
+          }
+        }
+        .contentImage {
+          width: 16rem;
+          height: 13rem;
+          object-fit: cover;
+        }
+      }
+      .options {
+        position: absolute;
+        top: 50%;
+        right: -3rem;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        font-size: 1rem;
+        color: white;
+        background-color: rgba(141, 141, 141, 0.2);
+        transform: translateY(-50%);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+  }
+
+  // Chat Area
+  .replyWrap {
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem 0 1.5rem;
+    justify-content: space-between;
+    .replyValue {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      width: 90%;
+      .iconReply {
+        font-size: 1.3rem;
+        transform: scaleX(-1);
+      }
+      .replyText {
+        white-space: nowrap;
+        -webkit-line-clamp: 1;
+      }
+      .replyMess {
+        width: 100%;
+        font-weight: 550;
+        white-space: nowrap;
+        overflow: hidden;
+        -webkit-line-clamp: 1;
+        text-overflow: ellipsis;
+      }
+    }
+    .closeIcon {
+      font-size: 1.3rem;
+      cursor: pointer;
+      &:hover {
+        color: rgb(231, 69, 69);
+      }
+    }
+  }
+  .imagePreview {
+    padding: 1rem 0 0 1rem;
+    position: relative;
+    .image {
+      object-fit: cover;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.75rem;
+    }
+    .iconRemoveImg {
+      position: absolute;
+      transform: translate(-0.5rem, -0.5rem);
+      color: white;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+  }
+  .chatting {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1rem;
+    gap: 0 1rem;
+    height: auto;
+    position: relative;
+    .inputChat {
+      top: 0;
+      left: 0;
+      flex: 1;
+      background-color: $background-dark;
+      border: 1px solid $border-dark;
+      color: $white;
+      outline: none;
+      padding: 0.5rem 1rem;
+      resize: none;
+      border-radius: 15px;
+      height: auto;
+    }
+    .emojiPicker {
+      position: absolute;
+      bottom: 100%;
+      right: 5%;
+    }
+    .emojiIcon {
+      font-size: 1.2rem;
+      color: $white;
+      padding: 0.5rem;
+      transition: all 0.2s linear;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    .sendMsg {
+      padding: 0.5rem;
+      background-color: transparent;
+      color: white;
+      font-size: 1.2rem;
+      transition: all 0.2s linear;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  .inputUpload {
+    display: none;
+  }
+}

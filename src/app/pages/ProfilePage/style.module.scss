@@ -1,0 +1,154 @@
+.profileWrap {
+  background: linear-gradient(
+    90deg,
+    #171b1d 0%,
+    rgb(35, 57, 161) 21%,
+    rgb(34, 117, 143) 50%,
+    rgb(24, 37, 78) 85%
+  );
+  width: 100%;
+  height: 100vh;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+// Header
+
+.headerProfile {
+  width: 100%;
+  height: 17rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  .userInfo {
+    border-radius: 1.5rem;
+    background-color: rgba(51, 51, 51, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-right: 1.5rem;
+    margin-left: 2rem;
+    overflow: hidden;
+    .avtWrapper {
+      position: relative;
+      height: 9rem;
+      .avatarProfile {
+        width: 9rem;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-top-left-radius: 1.5rem;
+        border-bottom-left-radius: 1.5rem;
+        cursor: pointer;
+        transition: all 0.2s linear;
+      }
+      .avtOptions {
+        display: none;
+        position: absolute;
+        top: 1.5rem;
+        left: 2rem;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      &:hover {
+        .avtOptions {
+          display: flex;
+        }
+        .avatarProfile {
+          filter: brightness(0.3);
+        }
+      }
+    }
+    .detailInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      color: white;
+      gap: 0.5rem;
+      .name {
+        font-weight: 600;
+        font-size: 1.1rem;
+        .idValue {
+          margin-left: 2rem;
+          .idCopy {
+            margin-left: 0.5rem;
+            padding: 0.25rem;
+            cursor: pointer;
+            transition: all 0.2s linear;
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+        .introduction {
+          font-size: 0.95rem;
+        }
+      }
+      .coinWrap {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .coinImg {
+          width: 2rem;
+          height: 2rem;
+          object-fit: cover;
+        }
+      }
+      .btnGroup {
+        display: flex;
+        gap: 0.5rem;
+      }
+    }
+  }
+  .socialLink {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    .socialItem {
+      background-color: rgba(240, 248, 255, 0.5);
+      padding: 0.25rem;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      border-radius: 0.25rem;
+      &:hover {
+        background-color: rgba(240, 248, 255, 0.8);
+        cursor: pointer;
+      }
+    }
+  }
+  .iconGallery {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: white;
+    font-size: 1.7rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+      transition: all 0.3s linear;
+    }
+  }
+}
+
+.inputUploadAvt {
+  display: none;
+}

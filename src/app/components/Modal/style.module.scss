@@ -1,0 +1,41 @@
+@import "../../scss/variables.scss";
+.wrapper {
+  padding: 0.5rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .title {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: $black;
+  }
+  .desc {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: $background-dark-light;
+  }
+  .inputChange {
+    margin: 1rem 0;
+    outline: 1px solid $black;
+    font-size: 1.2rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1.25rem;
+  }
+  .btnFooter {
+    margin-top: 1rem;
+    align-self: flex-end;
+  }
+  .content {
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .footer {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+    justify-content: end;
+  }
+}
