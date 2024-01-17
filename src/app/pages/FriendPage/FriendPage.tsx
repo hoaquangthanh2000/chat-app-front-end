@@ -20,6 +20,7 @@ const FriendPage = () => {
     handleAddFriend,
     handleSearchUser,
   } = useService();
+  console.log('dataCommunicate:', dataCommunicate);
 
   return (
     <div className={s.frWrapper}>
@@ -56,7 +57,6 @@ const FriendPage = () => {
               {lisTUser
                 .filter((e) => e.id !== currenTUser.id)
                 .map((user: TUser) => {
-                  const alreadyFriend = dataCommunicate.listFriend?.find((f) => f.id === user.id);
                   return (
                     <tr key={user.id} className={s.row}>
                       <td className={s.large}>
@@ -69,16 +69,14 @@ const FriendPage = () => {
                         {convertDiffTime((user.lastActive ?? '').toString())}
                       </td>
                       <td className={s.small}>
-                        {alreadyFriend ? (
-                          <></>
-                        ) : (
-                          <button
-                            onClick={() => handleAddFriend(user.id ?? '')}
-                            className={s.buttonAccept}
-                          >
-                            Add
-                          </button>
-                        )}
+                        <button
+                          onClick={() => handleAddFriend(user.id ?? '')}
+                          className={s.buttonAccept}
+                        >
+                          {dataCommunicate.listRequest?.find((u) => u.id === user.id)
+                            ? 'Cancel'
+                            : 'Add'}
+                        </button>
                       </td>
                     </tr>
                   );

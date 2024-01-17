@@ -16,7 +16,7 @@ function App() {
   const accessToken = getTokenFromLocalStorage();
 
   const { currenTUser, saveCurrenTUser } = authStore();
-  const { getDataCommunicate } = friendStore();
+  const { getDataCommunicate, dataCommunicate } = friendStore();
   const { setSocket } = socketStore();
 
   const getCurrenTUser = async () => {

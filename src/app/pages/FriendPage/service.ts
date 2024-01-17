@@ -15,6 +15,7 @@ const useService = () => {
   const handleAddFriend = async (friendId: string) => {
     try {
       await friendsApi.addFriend(friendId);
+      getDataCommunicate();
     } catch (err) {
       notification.error({
         message: `Error`,
